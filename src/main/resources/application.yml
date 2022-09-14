@@ -1,0 +1,43 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /qbrainx-website
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+
+
+#Sql Connection
+spring:
+  application:
+    name: qbrainx-website-app
+  datasource:
+    url: jdbc:postgresql://localhost:5432/qbrainx-website
+    username: postgres
+    password: admin@1234
+
+  #Hibernate properties
+  jpa:
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: update
+    generate-ddl: true
+
+#Api-Documentation
+springdoc:
+  group-configs:
+    - group: qbrainx-website
+      packagesToScan:
+        - "com.qbrainx.website"
+  swagger-ui:
+    path: /qbrainx-1336586310L-swagger-ui.html
+  api-docs:
+    path: /v3/qbrainx-1336586310L-api-docs
+
+#Image-upload
+image:
+  upload:
+    location: D:\\Fileupload
