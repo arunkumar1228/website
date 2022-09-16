@@ -26,6 +26,8 @@ public class Text {
 	@Column(name = "Message")
 	private String Message;
 
+
+
 	public Text() {
 	}
 
